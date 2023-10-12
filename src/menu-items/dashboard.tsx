@@ -20,17 +20,6 @@ const icons = {
 export const Menu = () => {
   const { menu } = useSelector((state) => state.menu);
 
-  const SubChildrenLis = (SubChildrenLis: NavItemType[]) => {
-    return SubChildrenLis?.map((subList: NavItemType) => {
-      return {
-        ...subList,
-        title: <FormattedMessage id={`${subList.title}`} />,
-        // @ts-ignore
-        icon: icons[subList.icon]
-      };
-    });
-  };
-
   const itemList = (subList: NavItemType) => {
     let list: NavItemType = {
       ...subList,
@@ -39,9 +28,6 @@ export const Menu = () => {
       icon: icons[subList.icon]
     };
 
-    if (subList.type === 'collapse') {
-      list.children = SubChildrenLis(subList.children!);
-    }
     return list;
   };
 

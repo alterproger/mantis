@@ -55,6 +55,7 @@ const menu = createSlice({
 
   extraReducers(builder) {
     builder.addCase(fetchMenu.fulfilled, (state, action) => {
+      console.log(action.payload.dashboard);
       state.menu = action.payload.dashboard;
     });
   }
