@@ -12,6 +12,7 @@ const UserProfile = () => (
   <MainCard
     title="Business Manager"
     content={false}
+    sx={{ height: '100%' }}
     secondary={
       <Link component={RouterLink} to="#" color="primary">
         View all
@@ -64,16 +65,26 @@ const UserProfile = () => (
         variant="outlined"
         color="secondary"
         fullWidth
-        sx={{ marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}
+        sx={{ marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px', color: '#000', borderColor: '#D9D9D9' }}
       >
         <PhoneOutlined />
         Schedule Call
       </Button>
       <Box display="flex" alignItems="center" gap="10px">
-        <Button variant="outlined" color="secondary" sx={{ display: 'flex', alignItems: 'center', gap: '8px' }} fullWidth>
+        <Button
+          variant="outlined"
+          color="secondary"
+          sx={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#000', borderColor: '#D9D9D9' }}
+          fullWidth
+        >
           <MessageOutlined /> Message
         </Button>
-        <Button variant="outlined" color="secondary" sx={{ display: 'flex', alignItems: 'center', gap: '8px' }} fullWidth>
+        <Button
+          variant="outlined"
+          color="secondary"
+          sx={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#000', borderColor: '#D9D9D9' }}
+          fullWidth
+        >
           <MailOutlined /> Email
         </Button>
       </Box>

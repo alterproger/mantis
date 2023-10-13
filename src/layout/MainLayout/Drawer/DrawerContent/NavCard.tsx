@@ -26,7 +26,14 @@ const NavCard = () => (
       <Button
         variant="outlined"
         color="secondary"
-        sx={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#000', marginTop: '8px !important' }}
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '8px',
+          color: '#000',
+          marginTop: '8px !important',
+          borderColor: '#D9D9D9'
+        }}
         fullWidth
       >
         <QuestionCircleOutlined /> Contact Support
