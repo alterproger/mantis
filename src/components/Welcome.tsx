@@ -5,8 +5,10 @@ const Welcome = () => {
   return (
     <Grid container>
       <Grid item xs={6}>
-        <Typography variant="h1">Welcome, Stebin</Typography>
-        <Typography variant="body2" sx={{ mt: '10px' }}>
+        <Typography variant="h1" sx={{ color: '#262626', fontSize: '24px', fontWeight: '700' }}>
+          Welcome, Stebin
+        </Typography>
+        <Typography variant="body2" sx={{ mt: '10px', color: '#8C8C8C', fontSize: '14px', fontWeight: '500' }}>
           Monday 10, October, 2023
         </Typography>
       </Grid>
