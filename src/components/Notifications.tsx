@@ -23,13 +23,15 @@ const Notifications = () => (
       </Link>
     }
   >
-    <CardContent sx={{ height: '100%' }}>
+    <CardContent sx={{ height: '100%', paddingX: 0 }}>
       <Grid
         container
         spacing={3}
         alignItems="center"
         sx={{
           height: '90%',
+          paddingX: '20px',
+          overflowY: 'auto',
           position: 'relative',
           '&>*': {
             position: 'relative',
@@ -39,9 +41,9 @@ const Notifications = () => (
             content: '""',
             position: 'absolute',
             top: 20,
-            left: 110,
+            left: 130,
             width: '1px',
-            height: '100%',
+            height: '90%',
             background: '#ebebeb',
             zIndex: '1'
           }
@@ -69,7 +71,19 @@ const Notifications = () => (
                   <Typography component="div" align="left" variant="subtitle1" sx={{ fontSize: '12px' }}>
                     Minutes limitation warning
                   </Typography>
-                  <Typography color="secondary" align="left" variant="caption" sx={{ fontSize: '10px' }}>
+                  <Typography
+                    color="secondary"
+                    align="left"
+                    variant="caption"
+                    sx={{
+                      fontSize: '10px',
+                      overflow: 'hidden',
+                      whiteSpace: 'nowrap',
+                      textOverflow: 'ellipsis',
+                      maxWidth: '100%',
+                      display: 'block'
+                    }}
+                  >
                     You have left 30 min left today
                   </Typography>
                 </Grid>
@@ -99,7 +113,19 @@ const Notifications = () => (
                   <Typography component="div" align="left" variant="subtitle1" sx={{ fontSize: '12px' }}>
                     Task Completed!
                   </Typography>
-                  <Typography color="secondary" align="left" variant="caption" sx={{ fontSize: '10px' }}>
+                  <Typography
+                    color="secondary"
+                    align="left"
+                    variant="caption"
+                    sx={{
+                      fontSize: '10px',
+                      overflow: 'hidden',
+                      whiteSpace: 'nowrap',
+                      textOverflow: 'ellipsis',
+                      maxWidth: '100%',
+                      display: 'block'
+                    }}
+                  >
                     Task #023 was completed by John Doe
                   </Typography>
                 </Grid>
@@ -129,7 +155,19 @@ const Notifications = () => (
                   <Typography component="div" align="left" variant="subtitle1" sx={{ fontSize: '12px' }}>
                     Task status changed
                   </Typography>
-                  <Typography color="secondary" align="left" variant="caption" sx={{ fontSize: '10px' }}>
+                  <Typography
+                    color="secondary"
+                    align="left"
+                    variant="caption"
+                    sx={{
+                      fontSize: '10px',
+                      overflow: 'hidden',
+                      whiteSpace: 'nowrap',
+                      textOverflow: 'ellipsis',
+                      maxWidth: '100%',
+                      display: 'block'
+                    }}
+                  >
                     Task #014 status changed to: In Production
                   </Typography>
                 </Grid>
@@ -163,9 +201,17 @@ const Notifications = () => (
                     color="secondary"
                     align="left"
                     variant="caption"
-                    sx={{ fontSize: '10px', overflow: 'hidden', whiteSpace: 'nowrap', textOverflow: 'ellipsis', maxWidth: '100%' }}
+                    sx={{
+                      fontSize: '10px',
+                      overflow: 'hidden',
+                      whiteSpace: 'nowrap',
+                      textOverflow: 'ellipsis',
+                      maxWidth: '100%',
+                      display: 'block'
+                    }}
                   >
-                    Lorem ipsum dolor sit amet consectetur adi...
+                    Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet
+                    sapien.
                   </Typography>
                 </Grid>
               </Grid>
