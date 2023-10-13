@@ -5,7 +5,7 @@ import { Button, CardMedia, Stack, Typography } from '@mui/material';
 import MainCard from 'components/MainCard';
 
 // assets
-import avatar from 'assets/images/users/avatar-group.png';
+import mail from 'assets/images/mail.svg';
 import { QuestionCircleOutlined, StarOutlined } from '@ant-design/icons';
 
 // ==============================|| DRAWER CONTENT - NAVIGATION CARD ||============================== //
@@ -13,7 +13,7 @@ import { QuestionCircleOutlined, StarOutlined } from '@ant-design/icons';
 const NavCard = () => (
   <MainCard sx={{ bgcolor: 'grey.50', m: 3, marginTop: 'auto' }} contentSX={{ padding: '16px' }}>
     <Stack alignItems="center" spacing={2.5}>
-      <CardMedia component="img" image={avatar} />
+      <CardMedia component="img" image={mail} sx={{ width: '124px', height: '83px', margin: '0 auto' }} />
       <Stack alignItems="center" sx={{ maxWidth: '100%' }}>
         <Typography variant="h5">Have anything to say?</Typography>
         <Typography variant="h6" color="secondary" sx={{ maxWidth: '100%', whiteSpace: 'normal', fontSize: '12px', textAlign: 'center' }}>
