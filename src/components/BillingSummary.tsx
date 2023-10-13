@@ -86,11 +86,13 @@ const BillingSummary = () => {
         </Stack>
 
         <Box display="flex" flexDirection="column" alignItems="flex-end" gap="4px">
-          <Typography variant="subtitle1">$49.99 / mo</Typography>
+          <Typography variant="subtitle1" sx={{ whiteSpace: 'nowrap' }}>
+            $49.99 / mo
+          </Typography>
           <Typography
             variant="caption"
             color="#52C41A"
-            sx={{ bgcolor: '#F6FFED', borderRadius: '4px', padding: '1px 8px', fontSize: '12px', lineHeight: '166%' }}
+            sx={{ bgcolor: '#F6FFED', borderRadius: '4px', padding: '1px 8px', fontSize: '12px', lineHeight: '166%', whiteSpace: 'nowrap' }}
           >
             Active
           </Typography>
@@ -98,18 +100,18 @@ const BillingSummary = () => {
       </Box>
       <Divider />
       <Divider />
-      <Box display="flex" justifyContent="space-between" py={'16px'} px={'24px'}>
-        <Typography color="#8C8C8C">
+      <Box display="flex" justifyContent="space-between" sx={{ flexWrap: 'wrap' }} py={'16px'} px={'24px'}>
+        <Typography sx={{ whiteSpace: 'nowrap' }} color="#8C8C8C">
           Next renewal date:{' '}
-          <Typography component="span" sx={{ color: 'black' }}>
+          <Typography component="span" sx={{ color: 'black', whiteSpace: 'nowrap' }}>
             26 October 2023
           </Typography>
         </Typography>
         <Stack direction="row" spacing={1.5} alignItems="center">
-          <Typography variant="caption" color="textSecondary">
+          <Typography sx={{ whiteSpace: 'nowrap' }} variant="caption" color="textSecondary">
             <CreditCardOutlined /> Visa ending in
           </Typography>
-          <Typography variant="subtitle1" sx={{ marginLeft: '5px !important' }}>
+          <Typography variant="subtitle1" sx={{ marginLeft: '5px !important', whiteSpace: 'nowrap' }}>
             5432
           </Typography>
         </Stack>
