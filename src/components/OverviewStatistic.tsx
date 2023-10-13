@@ -26,7 +26,9 @@ const OverviewStatistic: React.FC = () => {
       contentSX={{ display: 'flex', justifyContent: 'space-between', gap: '24px', p: '16px' }}
       title={
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <Typography variant="h4">Minutes Utilisation Overview</Typography>
+          <Typography variant="h4" sx={{ fontWeight: '500' }}>
+            Minutes Utilisation Overview
+          </Typography>
 
           <TextField size="small" select value={value} onChange={(e) => setValue(e.target.value)}>
             {status.map((option) => (

@@ -19,13 +19,13 @@ const OverviewCard: React.FC<Props> = ({ icon, distance, progress, name, descrip
     </IconButton>
 
     <Box sx={{ display: 'flex', gap: '5px', flexDirection: 'column' }}>
-      <Typography variant="h1">{`${distance} m`}</Typography>
-      <LinearWithLabel value={progress} color={color} />
+      <Typography variant="h1" sx={{ fontWeight: '700', fontSize: '24px' }}>{`${distance} m`}</Typography>
+      <LinearWithLabel value={progress} color={color} sx={{ background: '#F5F5F5' }} />
     </Box>
 
     <Box sx={{ display: 'flex', gap: '6px', flexDirection: 'column' }}>
-      <Typography>{name}</Typography>
-      <Typography>{description}</Typography>
+      <Typography sx={{ fontWeight: '500', fontSize: '16px' }}>{name}</Typography>
+      <Typography sx={{ fontWeight: '20', fontSize: '12px', color: '#8C8C8C' }}>{description}</Typography>
     </Box>
   </Card>
 );
