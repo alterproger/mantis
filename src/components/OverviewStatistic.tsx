@@ -25,8 +25,16 @@ const OverviewStatistic: React.FC = () => {
     <MainCard
       contentSX={{ display: 'flex', justifyContent: 'space-between', gap: '24px', p: '16px' }}
       title={
-        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <Typography variant="h4" sx={{ fontWeight: '500' }}>
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: { xs: 'column', sm: 'row' },
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            gap: '20px'
+          }}
+        >
+          <Typography variant="h4" sx={{ fontWeight: '500', textAlign: { xs: 'center', sm: 'left' } }}>
             Minutes Utilisation Overview
           </Typography>
 
