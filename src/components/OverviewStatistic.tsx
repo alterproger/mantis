@@ -40,7 +40,7 @@ const OverviewStatistic: React.FC = () => {
         </Box>
       }
     >
-      <Grid container spacing={2}>
+      <Grid container spacing={{ xs: 2, md: 3 }}>
         <OverviewCard
           icon={<StarOutlined />}
           distance={600}
