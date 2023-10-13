@@ -1,7 +1,7 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 // project import
-import axios from 'utils/axios';
+// import axios from 'utils/axios';
 
 // types
 import { MenuProps } from 'types/menu';
@@ -13,16 +13,57 @@ const initialState: MenuProps = {
   selectedID: null,
   drawerOpen: false,
   componentDrawerOpen: true,
-  menu: {},
+  menu: {
+    id: 'group-dashboard',
+    title: 'dashboard',
+    type: 'group',
+    icon: 'dashboard',
+    children: [
+      {
+        id: 'dashboard',
+        title: 'dashboard',
+        type: 'item',
+        icon: 'dashboard'
+      },
+      {
+        id: 'tasks',
+        title: 'Tasks / Projects',
+        type: 'item',
+        url: '/',
+        icon: 'tasks'
+      },
+      {
+        id: 'minutes',
+        title: 'Minutes Utilisation',
+        type: 'item',
+        url: '/',
+        icon: 'minutes'
+      },
+      {
+        id: 'billing',
+        title: 'Billing & Subscription',
+        type: 'item',
+        url: '/',
+        icon: 'billing'
+      },
+      {
+        id: 'support',
+        title: 'Support / Help',
+        type: 'item',
+        url: '/',
+        icon: 'support'
+      }
+    ]
+  },
   error: null
 };
 
 // ==============================|| SLICE - MENU ||============================== //
 
-export const fetchMenu = createAsyncThunk('', async () => {
-  const response = await axios.get('/api/menu/dashboard');
-  return response.data;
-});
+// export const fetchMenu = createAsyncThunk('', async () => {
+//   const response = await axios.get('/api/menu/dashboard');
+//   return response.data;
+// });
 
 const menu = createSlice({
   name: 'menu',
@@ -51,14 +92,13 @@ const menu = createSlice({
     hasError(state, action) {
       state.error = action.payload;
     }
-  },
-
-  extraReducers(builder) {
-    builder.addCase(fetchMenu.fulfilled, (state, action) => {
-      console.log(action.payload.dashboard);
-      state.menu = action.payload.dashboard;
-    });
   }
+
+  // extraReducers(builder) {
+  //   builder.addCase(fetchMenu.fulfilled, (state, action) => {
+  //     state.menu = action.payload.dashboard;
+  //   });
+  // }
 });
 
 export default menu.reducer;

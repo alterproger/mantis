@@ -69,7 +69,6 @@ const Navigation = () => {
     lastItemId = menuItems.items[lastItem - 1].id!;
     lastItemIndex = lastItem - 1;
     remItems = menuItems.items.slice(lastItem - 1, menuItems.items.length).map((item) => ({
-      title: item.title,
       elements: item.children,
       icon: item.icon
     }));

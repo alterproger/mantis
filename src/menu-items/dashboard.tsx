@@ -5,14 +5,25 @@ import { FormattedMessage } from 'react-intl';
 import { useSelector } from 'store';
 
 // assets
-import { DashboardOutlined, GoldOutlined } from '@ant-design/icons';
+import {
+  DashboardOutlined,
+  GoldOutlined,
+  FileTextOutlined,
+  DollarOutlined,
+  QuestionCircleOutlined,
+  BarChartOutlined
+} from '@ant-design/icons';
 
 // type
 import { NavItemType } from 'types/menu';
 
 const icons = {
   dashboard: DashboardOutlined,
-  components: GoldOutlined
+  components: GoldOutlined,
+  tasks: FileTextOutlined,
+  minutes: BarChartOutlined,
+  billing: DollarOutlined,
+  support: QuestionCircleOutlined
 };
 
 // ==============================|| MENU ITEMS - API ||============================== //

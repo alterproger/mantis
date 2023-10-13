@@ -4,7 +4,7 @@ import { useLocation } from 'react-router';
 // material-ui
 import { useTheme, styled } from '@mui/material/styles';
 import {
-  Box,
+  // Box,
   ClickAwayListener,
   List,
   ListItemButton,
@@ -34,7 +34,7 @@ import { DownOutlined, RightOutlined } from '@ant-design/icons';
 
 // types
 import { NavItemType } from 'types/menu';
-import { MenuOrientation, ThemeMode } from 'types/config';
+import { MenuOrientation } from 'types/config';
 
 // ==============================|| NAVIGATION - LIST GROUP ||============================== //
 
@@ -152,7 +152,7 @@ const NavGroup = ({ item, lastItem, remItems, lastItemId, setSelectedItems, sele
     />
   ) : null;
 
-  const navCollapse = item.children?.map((menuItem, index) => {
+  const navCollapse = item.children?.map((menuItem) => {
     switch (menuItem.type) {
       case 'collapse':
         return (
@@ -180,11 +180,6 @@ const NavGroup = ({ item, lastItem, remItems, lastItemId, setSelectedItems, sele
 
   const moreItems = remItems.map((itemRem: NavItemType, i) => (
     <Fragment key={i}>
-      {itemRem.title && (
-        <Typography variant="caption" sx={{ pl: 2 }}>
-          {itemRem.title}
-        </Typography>
-      )}
       {itemRem?.elements?.map((menu) => {
         switch (menu.type) {
           case 'collapse':
@@ -245,26 +240,7 @@ const NavGroup = ({ item, lastItem, remItems, lastItemId, setSelectedItems, sele
   return (
     <>
       {menuOrientation === MenuOrientation.VERTICAL || downLG ? (
-        <List
-          subheader={
-            item.title &&
-            drawerOpen && (
-              <Box sx={{ pl: 3, mb: 1.5 }}>
-                <Typography variant="subtitle2" color={theme.palette.mode === ThemeMode.DARK ? 'textSecondary' : 'text.secondary'}>
-                  {item.title}
-                </Typography>
-                {item.caption && (
-                  <Typography variant="caption" color="secondary">
-                    {item.caption}
-                  </Typography>
-                )}
-              </Box>
-            )
-          }
-          sx={{ mt: drawerOpen && item.title ? 1.5 : 0, py: 0, zIndex: 0 }}
-        >
-          {navCollapse}
-        </List>
+        <List sx={{ mt: drawerOpen && item.title ? 1.5 : 0, py: 0, zIndex: 0 }}>{navCollapse}</List>
       ) : (
         <List>
           <ListItemButton
