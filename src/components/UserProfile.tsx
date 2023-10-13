@@ -2,7 +2,7 @@ import { Link as RouterLink } from 'react-router-dom';
 
 import { CardContent, Button, Typography, Link, Grid, Avatar, Box, Divider } from '@mui/material';
 
-import { ClockCircleOutlined, MailOutlined, PhoneOutlined } from '@ant-design/icons';
+import { ClockCircleOutlined, MailOutlined, PhoneOutlined, MessageOutlined } from '@ant-design/icons';
 
 import MainCard from 'components/MainCard';
 
@@ -63,13 +63,18 @@ const UserProfile = () => (
     </CardContent>
     <Divider />
     <CardContent>
-      <Button variant="outlined" color="secondary" fullWidth sx={{ marginBottom: '10px' }}>
+      <Button
+        variant="outlined"
+        color="secondary"
+        fullWidth
+        sx={{ marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}
+      >
         <PhoneOutlined />
         Schedule Call
       </Button>
       <Box display="flex" alignItems="center" gap="10px">
-        <Button variant="outlined" color="secondary" fullWidth>
-          Message
+        <Button variant="outlined" color="secondary" sx={{ display: 'flex', alignItems: 'center', gap: '8px' }} fullWidth>
+          <MessageOutlined /> Message
         </Button>
         <Button variant="outlined" color="secondary" sx={{ display: 'flex', alignItems: 'center', gap: '8px' }} fullWidth>
           <MailOutlined /> Email
