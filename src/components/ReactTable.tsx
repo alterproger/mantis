@@ -18,6 +18,7 @@ import {
 } from 'react-table';
 import { DateColumnFilter, renderFilterTypes } from '../utils/react-table';
 import { HeaderSort } from './third-party/ReactTable';
+import ScrollX from './ScrollX';
 
 export interface InvoiceList {
   id: number;
@@ -70,46 +71,48 @@ const ReactTable = ({ columns, data }: Props) => {
   return (
     <>
       <Box ref={componentRef}>
-        <Table {...getTableProps()}>
-          <TableHead>
-            {headerGroups.map((headerGroup) => (
-              <TableRow {...headerGroup.getHeaderGroupProps()}>
-                {headerGroup.headers.map((column: HeaderGroup<{}>) => (
-                  <TableCell {...column.getHeaderProps([{ className: column.className }])}>
-                    <HeaderSort column={column} sort />
-                  </TableCell>
-                ))}
+        <ScrollX>
+          <Table {...getTableProps()}>
+            <TableHead>
+              {headerGroups.map((headerGroup) => (
+                <TableRow {...headerGroup.getHeaderGroupProps()}>
+                  {headerGroup.headers.map((column: HeaderGroup<{}>) => (
+                    <TableCell {...column.getHeaderProps([{ className: column.className }])}>
+                      <HeaderSort column={column} sort />
+                    </TableCell>
+                  ))}
+                </TableRow>
+              ))}
+            </TableHead>
+            <TableBody {...getTableBodyProps()}>
+              {page.map((row: Row, i: number) => {
+                prepareRow(row);
+                return (
+                  <Fragment key={i}>
+                    <TableRow
+                      {...row.getRowProps()}
+                      onClick={() => {
+                        row.toggleRowSelected();
+                      }}
+                      sx={{ cursor: 'pointer', bgcolor: row.isSelected ? alpha(theme.palette.primary.lighter, 0.35) : 'inherit' }}
+                    >
+                      {row.cells.map((cell: Cell) => (
+                        <TableCell {...cell.getCellProps([{ className: cell.column.className }])}>{cell.render('Cell')}</TableCell>
+                      ))}
+                    </TableRow>
+                  </Fragment>
+                );
+              })}
+              <TableRow sx={{ '&:hover': { bgcolor: 'transparent !important' } }}>
+                <TableCell sx={{ p: 2, py: 3 }} colSpan={9}>
+                  <Button variant="outlined" color="secondary" fullWidth>
+                    More Information
+                  </Button>
+                </TableCell>
               </TableRow>
-            ))}
-          </TableHead>
-          <TableBody {...getTableBodyProps()}>
-            {page.map((row: Row, i: number) => {
-              prepareRow(row);
-              return (
-                <Fragment key={i}>
-                  <TableRow
-                    {...row.getRowProps()}
-                    onClick={() => {
-                      row.toggleRowSelected();
-                    }}
-                    sx={{ cursor: 'pointer', bgcolor: row.isSelected ? alpha(theme.palette.primary.lighter, 0.35) : 'inherit' }}
-                  >
-                    {row.cells.map((cell: Cell) => (
-                      <TableCell {...cell.getCellProps([{ className: cell.column.className }])}>{cell.render('Cell')}</TableCell>
-                    ))}
-                  </TableRow>
-                </Fragment>
-              );
-            })}
-            <TableRow sx={{ '&:hover': { bgcolor: 'transparent !important' } }}>
-              <TableCell sx={{ p: 2, py: 3 }} colSpan={9}>
-                <Button variant="outlined" color="secondary" fullWidth sx={{ color: '#000', borderColor: '#D9D9D9' }}>
-                  More Information
-                </Button>
-              </TableCell>
-            </TableRow>
-          </TableBody>
-        </Table>
+            </TableBody>
+          </Table>
+        </ScrollX>
       </Box>
     </>
   );
