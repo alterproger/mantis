@@ -35,21 +35,23 @@ const DrawerContent = () => {
 
       {drawerOpen && !matchDownMD && <NavCard />}
 
-      <Button
-        variant="text"
-        sx={{
-          color: '#000',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '8px',
-          justifyContent: 'flex-start',
-          margin: '40px 0 20px',
-          padding: '11px 25px'
-        }}
-        fullWidth
-      >
-        <LogoutOutlined /> Log Out
-      </Button>
+      {drawerOpen && !matchDownMD && (
+        <Button
+          variant="text"
+          sx={{
+            color: '#000',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+            justifyContent: 'flex-start',
+            margin: '40px 0 20px',
+            padding: '11px 25px'
+          }}
+          fullWidth
+        >
+          <LogoutOutlined /> Log Out
+        </Button>
+      )}
     </SimpleBar>
   );
 };

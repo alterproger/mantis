@@ -32,7 +32,7 @@ const Footer = () => (
       backgroundColor: '#262626'
     }}
   >
-    <Box display="flex" justifyContent="space-between" marginBottom="64px" flexWrap="wrap">
+    <Box display="flex" justifyContent="space-between" marginBottom="64px" flexWrap="wrap" gap="40px">
       {linkColumns.map((column, index) => (
         <Box key={index}>
           <Typography
