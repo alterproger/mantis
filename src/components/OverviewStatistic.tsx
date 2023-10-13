@@ -31,7 +31,7 @@ const OverviewStatistic: React.FC = () => {
             flexDirection: { xs: 'column', sm: 'row' },
             justifyContent: 'space-between',
             alignItems: 'center',
-            gap: '20px'
+            gap: '12px'
           }}
         >
           <Typography variant="h4" sx={{ fontWeight: '500', textAlign: { xs: 'center', sm: 'left' } }}>
