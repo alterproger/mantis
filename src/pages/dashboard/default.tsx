@@ -5,6 +5,7 @@ import { Box, Grid, Stack, Typography } from '@mui/material';
 import MainCard from 'components/MainCard';
 import Notifications from 'components/Notifications';
 import OverviewStatistic from 'components/OverviewStatistic';
+import TabTable from 'components/TabTable';
 import UserProfile from 'components/UserProfile';
 import Welcome from 'components/Welcome';
 
@@ -19,6 +20,10 @@ const DashboardDefault = () => {
 
       <Grid item xs={12}>
         <OverviewStatistic />
+      </Grid>
+
+      <Grid item xs={12} md={8}>
+        <TabTable />
       </Grid>
 
       <Grid item md={8} sx={{ display: { sm: 'none', md: 'block', lg: 'none' } }} />
