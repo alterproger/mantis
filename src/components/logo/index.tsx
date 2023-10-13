@@ -7,7 +7,6 @@ import { SxProps } from '@mui/system';
 
 // project import
 import Logo from './LogoMain';
-import LogoIcon from './LogoIcon';
 import { APP_DEFAULT_PATH } from 'config';
 
 // ==============================|| MAIN LOGO ||============================== //
@@ -21,7 +20,7 @@ interface Props {
 
 const LogoSection = ({ reverse, isIcon, sx, to }: Props) => (
   <ButtonBase disableRipple component={Link} to={!to ? APP_DEFAULT_PATH : to} sx={sx}>
-    {isIcon ? <LogoIcon /> : <Logo reverse={reverse} />}
+    {isIcon ? <Logo isCollapsed /> : <Logo />}
   </ButtonBase>
 );
 
