@@ -16,18 +16,20 @@ const Notifications = () => (
   <MainCard
     title="Notifications & Alerts Center"
     content={false}
+    sx={{ height: '100%' }}
     secondary={
       <Link component={RouterLink} to="#" color="primary">
         View all
       </Link>
     }
   >
-    <CardContent>
+    <CardContent sx={{ height: '100%' }}>
       <Grid
         container
         spacing={3}
         alignItems="center"
         sx={{
+          height: '90%',
           position: 'relative',
           '&>*': {
             position: 'relative',

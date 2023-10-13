@@ -5,6 +5,7 @@ import { Box, Grid, Stack, Typography } from '@mui/material';
 import MainCard from 'components/MainCard';
 import Notifications from 'components/Notifications';
 import OverviewStatistic from 'components/OverviewStatistic';
+import BillingSummary from '../../components/Billing Summary';
 import TabTable from 'components/TabTable';
 import UserProfile from 'components/UserProfile';
 import Welcome from 'components/Welcome';
@@ -35,17 +36,7 @@ const DashboardDefault = () => {
 
       {/* row 3 */}
       <Grid item xs={12} md={7} lg={8}>
-        <Grid container alignItems="center" justifyContent="space-between">
-          <Grid item>
-            <Typography variant="h5">Unique Visitor</Typography>
-          </Grid>
-          <Grid item>
-            <Stack direction="row" alignItems="center" spacing={0}></Stack>
-          </Grid>
-        </Grid>
-        <MainCard content={false} sx={{ mt: 1.5 }}>
-          <Box sx={{ pt: 1, pr: 2 }}></Box>
-        </MainCard>
+        <BillingSummary />
       </Grid>
 
       <Grid item xs={12} md={5} lg={4}>
