@@ -105,7 +105,7 @@ const ReactTable = ({ columns, data }: Props) => {
               })}
               <TableRow sx={{ '&:hover': { bgcolor: 'transparent !important' } }}>
                 <TableCell sx={{ p: 2, py: 3 }} colSpan={9}>
-                  <Button variant="outlined" color="secondary" fullWidth>
+                  <Button variant="outlined" color="secondary" sx={{ color: '#000', borderColor: '#D9D9D9' }} fullWidth>
                     More Information
                   </Button>
                 </TableCell>
