@@ -28,7 +28,9 @@ const UserProfile = () => (
               {/* Second Column - Text Info */}
               <Grid container spacing={1}>
                 <Grid item xs={12}>
-                  <Typography variant="h3">Andrew Willyams</Typography>
+                  <Typography variant="h3" sx={{ fontSize: '20px', lineHeight: '140%', fontWeight: '700' }}>
+                    Andrew Willyams
+                  </Typography>
                 </Grid>
                 <Grid item xs={12}>
                   <Box display="flex" justifyContent="space-between" alignItems="center">
