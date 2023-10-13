@@ -4,6 +4,8 @@ import { CardContent, Button, Typography, Link, Grid, Avatar, Box, Divider } fro
 
 import { ClockCircleOutlined, MailOutlined, PhoneOutlined, MessageOutlined } from '@ant-design/icons';
 
+import avatarImage from 'assets/images/profile/avatar.jpg';
+
 import MainCard from 'components/MainCard';
 
 const UserProfile = () => (
@@ -19,13 +21,8 @@ const UserProfile = () => (
     <CardContent>
       <Grid container spacing={2}>
         <Grid item xs={12}>
-          {/* First Row */}
           <Box display="flex" alignItems="center" gap="12px">
-            <Avatar
-              src="URL_OF_IMAGE" // Replace with the actual image URL
-              alt="User Avatar"
-              sx={{ width: 100, height: 100, borderRadius: '50%' }}
-            />
+            <Avatar src={avatarImage} alt="User Avatar" sx={{ width: 100, height: 100, borderRadius: '50%' }} />
             <Grid item xs={10}>
               {/* Second Column - Text Info */}
               <Grid container spacing={1}>
