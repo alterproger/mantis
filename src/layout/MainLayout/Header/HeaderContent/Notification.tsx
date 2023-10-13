@@ -1,7 +1,6 @@
 import { useRef, useState } from 'react';
 
 // material-ui
-import { useTheme } from '@mui/material/styles';
 import {
   Avatar,
   Badge,
@@ -9,21 +8,22 @@ import {
   ClickAwayListener,
   Divider,
   List,
-  ListItemButton,
   ListItemAvatar,
-  ListItemText,
+  ListItemButton,
   ListItemSecondaryAction,
+  ListItemText,
   Paper,
   Popper,
   Tooltip,
   Typography,
   useMediaQuery
 } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 
 // project import
-import MainCard from 'components/MainCard';
 import IconButton from 'components/@extended/IconButton';
 import Transitions from 'components/@extended/Transitions';
+import MainCard from 'components/MainCard';
 
 // assets
 import { BellOutlined, CheckCircleOutlined, GiftOutlined, MessageOutlined, SettingOutlined } from '@ant-design/icons';
@@ -83,7 +83,7 @@ const Notification = () => {
         aria-haspopup="true"
         onClick={handleToggle}
       >
-        <Badge badgeContent={read} color="primary">
+        <Badge color="primary">
           <BellOutlined />
         </Badge>
       </IconButton>
