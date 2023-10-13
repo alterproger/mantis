@@ -1,11 +1,14 @@
+import { useMemo } from 'react';
+import { Row } from 'react-table';
+
 import MainCard from './MainCard';
 import ReactTable from './ReactTable';
 import invoiceListData from '../data/invoiceData';
-import { useMemo } from 'react';
-import { Row } from 'react-table';
+import LogoIcon from './logo/LogoIcon';
+
 import { Box, Button, Divider, Stack, Typography } from '@mui/material';
+
 import { CreditCardOutlined, MoreOutlined } from '@ant-design/icons';
-import LogoMain from './logo/LogoMain';
 
 const BillingSummary = () => {
   const columns = useMemo(
@@ -72,9 +75,9 @@ const BillingSummary = () => {
       <Divider />
       <Box py={'16px'} px={'24px'} display="flex" justifyContent="space-between">
         <Stack direction="row">
-          <LogoMain showName={false} />
+          <LogoIcon width={40} height={40} />
 
-          <Box>
+          <Box marginLeft="10px">
             <Typography variant="subtitle1">Extended Subscription</Typography>
             <Typography variant="caption" color="textSecondary">
               600 minutes

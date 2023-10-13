@@ -4,7 +4,7 @@ import { Grid } from '@mui/material';
 // project import
 import Notifications from 'components/Notifications';
 import OverviewStatistic from 'components/OverviewStatistic';
-import BillingSummary from '../../components/Billing Summary';
+import BillingSummary from '../../components/BillingSummary';
 import TabTable from 'components/TabTable';
 import UserProfile from 'components/UserProfile';
 import Welcome from 'components/Welcome';
