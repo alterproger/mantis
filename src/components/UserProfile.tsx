@@ -33,7 +33,7 @@ const UserProfile = () => (
                   </Typography>
                 </Grid>
                 <Grid item xs={12}>
-                  <Box display="flex" justifyContent="space-between" alignItems="center">
+                  <Box display="flex" justifyContent="space-between" alignItems="center" flexWrap="wrap" gap="5px">
                     <Box display="flex" alignItems="center" gap="5px">
                       <ClockCircleOutlined style={{ color: '#8C8C8C' }} />
                       <Typography variant="caption" sx={{ color: '#8C8C8C', fontSize: 14 }}>

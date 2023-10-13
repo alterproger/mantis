@@ -1,8 +1,18 @@
 import { forwardRef, CSSProperties, ReactNode, Ref } from 'react';
 
 // material-ui
-import { useTheme } from '@mui/material/styles';
-import { Card, CardContent, CardHeader, Divider, Typography, CardProps, CardHeaderProps, CardContentProps } from '@mui/material';
+import { Theme, useTheme } from '@mui/material/styles';
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  Divider,
+  Typography,
+  CardProps,
+  CardHeaderProps,
+  CardContentProps,
+  useMediaQuery
+} from '@mui/material';
 
 // types
 import { KeyedObject } from 'types/root';
@@ -55,6 +65,8 @@ const MainCard = forwardRef(
     }: MainCardProps,
     ref: Ref<HTMLDivElement>
   ) => {
+    const matchDownSM = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'));
+
     const theme = useTheme();
     boxShadow = theme.palette.mode === ThemeMode.DARK ? boxShadow || true : boxShadow;
 
@@ -91,7 +103,7 @@ const MainCard = forwardRef(
         {!darkTitle && title && (
           <CardHeader
             sx={headerSX}
-            titleTypographyProps={{ variant: 'subtitle1', fontSize: '20px', fontWeight: 500 }}
+            titleTypographyProps={{ variant: 'subtitle1', fontSize: `${matchDownSM ? '16px' : '20px'}`, fontWeight: 500 }}
             title={title}
             action={secondary}
             subheader={subheader}
