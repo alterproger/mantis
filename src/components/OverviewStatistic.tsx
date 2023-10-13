@@ -1,5 +1,5 @@
 import { ClockCircleOutlined, FieldTimeOutlined, StarOutlined } from '@ant-design/icons';
-import { Box, MenuItem, TextField, Typography } from '@mui/material';
+import { Box, Grid, MenuItem, TextField, Typography } from '@mui/material';
 import MainCard from 'components/MainCard';
 import { useState } from 'react';
 import OverviewCard from './OverviewCard';
@@ -40,31 +40,33 @@ const OverviewStatistic: React.FC = () => {
         </Box>
       }
     >
-      <OverviewCard
-        icon={<StarOutlined />}
-        distance={600}
-        progress={100}
-        name="Total Minutes Purchased"
-        description="Overall Minutes from the subscription"
-        color="info"
-      />
+      <Grid container spacing={2}>
+        <OverviewCard
+          icon={<StarOutlined />}
+          distance={600}
+          progress={100}
+          name="Total Minutes Purchased"
+          description="Overall Minutes from the subscription"
+          color="info"
+        />
 
-      <OverviewCard
-        icon={<FieldTimeOutlined />}
-        distance={354}
-        progress={55}
-        name="Minutes Used"
-        description="Live tracker of the time utilised"
-        color="success"
-      />
-      <OverviewCard
-        icon={<ClockCircleOutlined />}
-        distance={246}
-        progress={45}
-        name="Minutes Remaining"
-        description="Leftover minutes for this month"
-        color="error"
-      />
+        <OverviewCard
+          icon={<FieldTimeOutlined />}
+          distance={354}
+          progress={55}
+          name="Minutes Used"
+          description="Live tracker of the time utilised"
+          color="success"
+        />
+        <OverviewCard
+          icon={<ClockCircleOutlined />}
+          distance={246}
+          progress={45}
+          name="Minutes Remaining"
+          description="Leftover minutes for this month"
+          color="error"
+        />
+      </Grid>
     </MainCard>
   );
 };
