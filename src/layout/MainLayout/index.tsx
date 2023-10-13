@@ -9,6 +9,7 @@ import { useMediaQuery, Box, Container, Toolbar } from '@mui/material';
 import Drawer from './Drawer';
 import Header from './Header';
 import HorizontalBar from './Drawer/HorizontalBar';
+import Footer from './Footer';
 
 // import navigation from 'menu-items';
 import useConfig from 'hooks/useConfig';
@@ -38,26 +39,29 @@ const MainLayout = () => {
   }, [matchDownXL]);
 
   return (
-    <Box sx={{ display: 'flex', width: '100%' }}>
-      <Header />
-      {!isHorizontal ? <Drawer /> : <HorizontalBar />}
+    <>
+      <Box sx={{ display: 'flex', width: '100%' }}>
+        <Header />
+        {!isHorizontal ? <Drawer /> : <HorizontalBar />}
 
-      <Box component="main" sx={{ width: 'calc(100% - 260px)', flexGrow: 1, p: { xs: 2, sm: 3 } }}>
-        <Toolbar sx={{ mt: isHorizontal ? 8 : 'inherit' }} />
-        <Container
-          maxWidth={container ? 'xl' : false}
-          sx={{
-            ...(container && { px: { xs: 0, sm: 2 } }),
-            position: 'relative',
-            minHeight: 'calc(100vh - 110px)',
-            display: 'flex',
-            flexDirection: 'column'
-          }}
-        >
-          <Outlet />
-        </Container>
+        <Box component="main" sx={{ width: 'calc(100% - 260px)', flexGrow: 1, p: { xs: 2, sm: 3 } }}>
+          <Toolbar sx={{ mt: isHorizontal ? 8 : 'inherit' }} />
+          <Container
+            maxWidth={container ? 'xl' : false}
+            sx={{
+              ...(container && { px: { xs: 0, sm: 2 } }),
+              position: 'relative',
+              minHeight: 'calc(100vh - 110px)',
+              display: 'flex',
+              flexDirection: 'column'
+            }}
+          >
+            <Outlet />
+          </Container>
+        </Box>
       </Box>
-    </Box>
+      <Footer />
+    </>
   );
 };
 

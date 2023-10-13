@@ -9,6 +9,8 @@ import { DRAWER_WIDTH } from 'config';
 import { ThemeMode } from 'types/config';
 
 const openedMixin = (theme: Theme): CSSObject => ({
+  position: 'static',
+  height: '100%',
   width: DRAWER_WIDTH,
   borderRight: `1px solid ${theme.palette.divider}`,
   transition: theme.transitions.create('width', {
@@ -20,6 +22,8 @@ const openedMixin = (theme: Theme): CSSObject => ({
 });
 
 const closedMixin = (theme: Theme): CSSObject => ({
+  position: 'static',
+  height: '100%',
   transition: theme.transitions.create('width', {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen
