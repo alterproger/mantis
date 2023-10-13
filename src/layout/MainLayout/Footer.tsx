@@ -38,6 +38,7 @@ const Footer = () => (
           <Typography
             variant="h6"
             sx={{
+              width: '223px',
               fontSize: 16,
               fontWeight: 500,
               lineHeight: '150%',
@@ -54,7 +55,6 @@ const Footer = () => (
               variant="body1"
               color="#BFBFBF"
               sx={{
-                width: '223px',
                 display: 'block',
                 padding: '12px 24px 12px 0',
                 fontSize: 14,

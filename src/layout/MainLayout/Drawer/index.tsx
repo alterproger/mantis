@@ -36,7 +36,7 @@ const MainDrawer = ({ window }: Props) => {
   return (
     <Box component="nav" sx={{ flexShrink: { md: 0 }, zIndex: 1200 }} aria-label="mailbox folders">
       {!matchDownMD ? (
-        <MiniDrawerStyled variant="permanent" open={drawerOpen}>
+        <MiniDrawerStyled variant="permanent" open={drawerOpen} sx={{ height: '100%' }}>
           {drawerHeader}
           {drawerContent}
         </MiniDrawerStyled>
@@ -49,7 +49,10 @@ const MainDrawer = ({ window }: Props) => {
           ModalProps={{ keepMounted: true }}
           sx={{
             display: { xs: 'block', lg: 'none' },
+            height: '100%',
+
             '& .MuiDrawer-paper': {
+              height: '100%',
               boxSizing: 'border-box',
               width: DRAWER_WIDTH,
               borderRight: `1px solid ${theme.palette.divider}`,

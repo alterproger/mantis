@@ -11,7 +11,7 @@ import { QuestionCircleOutlined, StarOutlined } from '@ant-design/icons';
 // ==============================|| DRAWER CONTENT - NAVIGATION CARD ||============================== //
 
 const NavCard = () => (
-  <MainCard sx={{ bgcolor: 'grey.50', m: 3 }} contentSX={{ padding: '16px' }}>
+  <MainCard sx={{ bgcolor: 'grey.50', m: 3, marginTop: 'auto' }} contentSX={{ padding: '16px' }}>
     <Stack alignItems="center" spacing={2.5}>
       <CardMedia component="img" image={avatar} />
       <Stack alignItems="center" sx={{ maxWidth: '100%' }}>
