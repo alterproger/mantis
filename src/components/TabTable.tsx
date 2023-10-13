@@ -160,8 +160,17 @@ export default function TabTable() {
     >
       <CardContent>
         <TabContext value={tab}>
-          <Box sx={{ borderBottom: 1, borderColor: 'divider', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <TabList onChange={handleChange}>
+          <Box
+            sx={{
+              borderBottom: 1,
+              borderColor: 'divider',
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              overflowX: 'auto'
+            }}
+          >
+            <TabList onChange={handleChange} sx={{ minWidth: '350px' }}>
               <Tab label={<TabLabel color="info" name="Active" amount={activeList.length} />} value="active" />
               <Tab label={<TabLabel color="warning" name="Pending" amount={pendingList.length} />} value="pending" />
               <Tab label={<TabLabel color="success" name="Completed" amount={completedList.length} />} value="completed" />
