@@ -3,8 +3,8 @@ import { Row } from 'react-table';
 
 import MainCard from './MainCard';
 import ReactTable from './ReactTable';
-import invoiceListData from '../data/invoiceData';
 import LogoIcon from './logo/LogoIcon';
+import invoiceListData from '../data/invoiceData';
 
 import { Box, Button, Divider, Stack, Typography } from '@mui/material';
 
@@ -99,8 +99,11 @@ const BillingSummary = () => {
       <Divider />
       <Divider />
       <Box display="flex" justifyContent="space-between" py={'16px'} px={'24px'}>
-        <Typography>
-          Next renewal date: <span>26 October 2023</span>
+        <Typography color="#8C8C8C">
+          Next renewal date:{' '}
+          <Typography component="span" sx={{ color: 'black' }}>
+            26 October 2023
+          </Typography>
         </Typography>
         <Stack direction="row" spacing={1.5} alignItems="center">
           <Typography variant="caption" color="textSecondary">
@@ -113,6 +116,12 @@ const BillingSummary = () => {
       </Box>
       <Divider />
       <ReactTable columns={columns} data={invoiceListData} />
+      <Divider />
+      <Box sx={{ padding: ' 20px 16px' }}>
+        <Button variant="outlined" color="secondary" sx={{ color: '#000', borderColor: '#D9D9D9' }} fullWidth>
+          More Information
+        </Button>
+      </Box>
     </MainCard>
   );
 };

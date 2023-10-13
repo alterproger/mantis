@@ -1,6 +1,6 @@
 import { useMemo, Fragment, useRef } from 'react';
 
-import { Box, Table, TableBody, TableCell, TableHead, TableRow, Button } from '@mui/material';
+import { Box, Table, TableBody, TableCell, TableHead, TableRow } from '@mui/material';
 import { alpha, useTheme } from '@mui/material/styles';
 
 import {
@@ -77,7 +77,7 @@ const ReactTable = ({ columns, data }: Props) => {
               {headerGroups.map((headerGroup) => (
                 <TableRow {...headerGroup.getHeaderGroupProps()}>
                   {headerGroup.headers.map((column: HeaderGroup<{}>) => (
-                    <TableCell {...column.getHeaderProps([{ className: column.className }])}>
+                    <TableCell {...column.getHeaderProps([{ className: column.className }])} sx={{ '&:after': { display: 'none' } }}>
                       <HeaderSort column={column} sort />
                     </TableCell>
                   ))}
@@ -94,7 +94,11 @@ const ReactTable = ({ columns, data }: Props) => {
                       onClick={() => {
                         row.toggleRowSelected();
                       }}
-                      sx={{ cursor: 'pointer', bgcolor: row.isSelected ? alpha(theme.palette.primary.lighter, 0.35) : 'inherit' }}
+                      sx={{
+                        cursor: 'pointer',
+                        whiteSpace: 'nowrap',
+                        bgcolor: row.isSelected ? alpha(theme.palette.primary.lighter, 0.35) : 'inherit'
+                      }}
                     >
                       {row.cells.map((cell: Cell) => (
                         <TableCell {...cell.getCellProps([{ className: cell.column.className }])}>{cell.render('Cell')}</TableCell>
@@ -103,13 +107,6 @@ const ReactTable = ({ columns, data }: Props) => {
                   </Fragment>
                 );
               })}
-              <TableRow sx={{ '&:hover': { bgcolor: 'transparent !important' } }}>
-                <TableCell sx={{ p: 2, py: 3 }} colSpan={9}>
-                  <Button variant="outlined" color="secondary" sx={{ color: '#000', borderColor: '#D9D9D9' }} fullWidth>
-                    More Information
-                  </Button>
-                </TableCell>
-              </TableRow>
             </TableBody>
           </Table>
         </ScrollX>
